@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-gray-700">
     <Header />
     <div class="layout">
       <slot/>
@@ -15,8 +15,8 @@ import Footer from "~/components/Footer"
 export default {
   components: {
     Header,
-    Footer
-  }
+    Footer,
+  },
 }
 </script>
 

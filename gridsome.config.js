@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'gridsome',
   transformers: {
     remark: {
       externalLinksTarget: '_blank',
@@ -12,10 +12,24 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'blog/**/*.md',
+        path: 'contents/blog/**/*.md',
         typeName: 'Post',
         remark: {}
       }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'contents/menu/**/*.md',
+        typeName: 'Menu',
+        remake: {}
+      }
+    },
+    {
+      use: 'gridsome-plugin-tailwindcss',
+        options: {
+          config: './tailwind.config.js'
+        }
     }
   ]
 }

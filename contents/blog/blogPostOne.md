@@ -1,9 +1,10 @@
 ---
-title: Blog Post Four
+title: Blog Post One
 featuredImage: /uploads/puppy1.jpg
+text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique tenetur esse quis exercitationem porro fugiat? Explicabo asperiores repellendus odit fuga delectus vel ducimus corporis laborum, totam officiis. Quos, autem quam.
 ---
 
-# Blog Post Four
+# Blog Post One
 
 Content for **blog post one**. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique tenetur esse quis exercitationem porro fugiat? Explicabo asperiores repellendus odit fuga delectus vel ducimus corporis laborum, totam officiis. Quos, autem quam.
 

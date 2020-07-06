@@ -1,13 +1,13 @@
 <template>
   <MarkdownLayout>
-    <div class="markdown-body" v-html="$page.post.content" />
+    <div class="markdown-body" v-html="$page.menu.content" />
   </MarkdownLayout>
 </template>
 
 
 <page-query>
-query Post ($path: String!) {
-    post: post(path: $path) {
+query Menu ($path: String!) {
+    menu: menu(path: $path) {
         title
         content
     }
@@ -18,7 +18,7 @@ query Post ($path: String!) {
 export default {
     metaInfo() {
         return {
-            title: this.$page.post.title
+            title: this.$page.menu.title
         }
     }
 }

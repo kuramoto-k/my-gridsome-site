@@ -1,49 +1,50 @@
 <template>
   <Layout>
 
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
+    <Carousel />
 
-    <h1>Hello, world!</h1>
+    <h2 class="text-2xl font-semibold mt-16 mb-4">最新の記事</h2>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <h2>Manula Blogroll</h2>
-
-    <ul>
-      <li><g-link to="/blog-html/blog-post-one">Blog Post One</g-link></li>
-      <li><g-link to="/blog-html/blog-post-two">Blog Post two</g-link></li>
-      <li><g-link to="/blog-html/blog-post-three">Blog Post Three</g-link></li>
-    </ul>
-
-    <h2>Automatic Blogroll</h2>
-
-    <ul>
-      <li v-for="post in $page.posts.edges" :key="post.id">
-        <g-link :to="post.node.path">
-          {{ post.node.title }}
+    <ul class="flex flex-wrap justify-between">
+      <li v-for="post in $page.posts.edges" :key="post.id" class="w-full md:w-1/3">
+        <g-link :to="post.node.path" class="block w-full md:w-11/12">
+          <Card :post="post.node"/>
         </g-link>
       </li>
     </ul>
 
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
+    <h2 class="text-2xl font-semibold mt-16 mb-4">メニュー</h2>
+
+    <ul class="flex flex-wrap justify-between">
+      <li v-for="item in $page.menu.edges" :key="item.id" class="w-full md:w-1/3">
+        <g-link :to="item.node.path" class="block w-full md:w-11/12">
+          <Menu :item="item.node"/>
+        </g-link>
+      </li>
+    </ul>
 
   </Layout>
 </template>
 
 <page-query>
-query Posts {
-  posts: allPost {
+{
+  posts: allPost (limit:3, sort: {order: ASC}){
     edges {
       node {
         id
         title
         path
+        text
+      }
+    }
+  }
+  menu: allMenu (limit:3, sort: {order: ASC}){
+    edges {
+      node {
+        id
+        title
+        path
+        featuredImage
       }
     }
   }
@@ -51,15 +52,18 @@ query Posts {
 </page-query>
 
 <script>
+import Carousel from "~/components/Carousel"
+import Card from "~/components/Card"
+import Menu from "~/components/Menu"
+
 export default {
   metaInfo: {
     title: 'Hello, world!'
+  },
+  components: {
+    Carousel,
+    Card,
+    Menu
   }
 }
 </script>
-
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>

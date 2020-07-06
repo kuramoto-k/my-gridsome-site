@@ -1,13 +1,19 @@
 ---
-title: Blog Post Four
-featuredImage: /uploads/puppy1.jpg
-text: Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique tenetur esse quis exercitationem porro fugiat? Explicabo asperiores repellendus odit fuga delectus vel ducimus corporis laborum, totam officiis. Quos, autem quam.
+title: blogPostFive
+featuredImage: uploads/pan_toast_jam.png
 ---
-# Blog Post Four
+# Blog Post Five
 
 Changed Content for **blog post one**. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique tenetur esse quis exercitationem porro fugiat? Explicabo asperiores repellendus odit fuga delectus vel ducimus corporis laborum, totam officiis. Quos, autem quam.
 
 *Italic*, **bold**, and `monospace`
+
+```js
+<script>
+  const foo = 'bar';
+  console.log(foo);
+</script>
+```
 
 Itemized lists look like:
 

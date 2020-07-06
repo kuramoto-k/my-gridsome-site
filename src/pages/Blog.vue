@@ -14,7 +14,7 @@
 
 <page-query>
 {
-  posts: allPost (limit:3, sort: {order: ASC}){
+  posts: allPost {
     edges {
       node {
         id
